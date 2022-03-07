@@ -133,6 +133,7 @@ footer {
 
 .face::after {
     font-size: 8rem;
-    content: '😃';
+    /* content: '😃' ; */
+    content: '✨';
     position: absolute;
 }
