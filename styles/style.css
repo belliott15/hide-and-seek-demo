@@ -134,6 +134,12 @@ footer {
 .face::after {
     font-size: 8rem;
     /* content: '😃' ; */
-    content: '✨';
+    content: '🤭';
     position: absolute;
+}
+
+.guessLog{
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
 }

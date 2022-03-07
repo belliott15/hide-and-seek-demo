@@ -20,6 +20,7 @@ shedButton.addEventListener('click', () => {
     let correctSpot = getRandomHidingSpot();
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess('shed', correctSpot);
+
 });
 
 treeButton.addEventListener('click', () => {
@@ -61,9 +62,6 @@ function handleGuess(userGuess, correctSpot) {
     boulderContainer.classList.remove('face');
     // we can do that by removing the .face class from all containers
     // then increment the guesses
-    // winsEl.textContent = correctGuesses;
-    // totalEl.textContent = totalGuesses;
-    // lossesEl.textContent = totalGuesses - correctGuesses;
     totalGuesses++;
     // then use getElementById and the correctSpot string to grab the appropriate container from the DOM
     const hiddenHere = document.getElementById(`${correctSpot}-container`);
@@ -78,4 +76,6 @@ function handleGuess(userGuess, correctSpot) {
     totalEl.textContent = totalGuesses;
     lossesEl.textContent = totalGuesses - correctGuesses;
     // update the DOM to show the new value of wins, losses and total guesses to the user
+
 }
+
