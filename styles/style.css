@@ -48,9 +48,10 @@ section {
 header {
     display: flex;
     justify-content: flex-end;
-    background-color: var(--color3);
+    background-color:rgba(60, 162, 221, 0.45);;
     height: var(--header-height);
     box-shadow: var(--shadow);
+    border-radius: 10px;
 }
 
 footer {
@@ -112,6 +113,14 @@ footer {
 
   }
 
+button{
+    border-radius: 10px;
+    width: 100px;
+    padding: 10px;
+    background-color: lightslategray;
+    font-size: 1rem;
+}
+
 .hiding-places {
     height: 300px;
     display: flex;
@@ -136,4 +145,19 @@ footer {
     /* content: '😃' ; */
     content: '🥸';
     position: absolute;
+}
+
+.section2{
+    background-color: lightskyblue;
+    display: grid;
+    font-size: 1.2rem;
+    border: 3px black inset;
+    margin: 0;
+}
+
+.section3{
+    background-color: skyblue;
+    font-size: 1.2rem;
+    border: 3px black inset;
+    margin: 0;
 }
