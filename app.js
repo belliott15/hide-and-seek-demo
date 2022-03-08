@@ -11,11 +11,23 @@ const totalEl = document.getElementById('total');
 const lossesEl = document.getElementById('losses');
 const winsEl = document.getElementById('wins');
 
+const lastGuess = document.getElementById('last-guess');
+const treeGuess = document.getElementById('tree-guess');
+const boulderGuess = document.getElementById('boulder-guess');
+const shedGuess = document.getElementById('shed-log');
+
 
 let correctGuesses = 0;
 let totalGuesses = 0;
 
+let totalTree = 0;
+let totalBoulder = 0;
+let totalShed = 0;
+
+
+
 shedButton.addEventListener('click', () => {
+    totalShed++;
     // get a random item to call the 'correct spot'
     let correctSpot = getRandomHidingSpot();
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
@@ -24,6 +36,7 @@ shedButton.addEventListener('click', () => {
 });
 
 treeButton.addEventListener('click', () => {
+    totalTree++;
     // get a random item to call the 'correct spot'
     let correctSpot = getRandomHidingSpot();
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
@@ -31,6 +44,7 @@ treeButton.addEventListener('click', () => {
 });
 
 boulderButton.addEventListener('click', () => {
+    totalBoulder++;
     // get a random item to call the 'correct spot'
     let correctSpot = getRandomHidingSpot();
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
@@ -76,6 +90,11 @@ function handleGuess(userGuess, correctSpot) {
     totalEl.textContent = totalGuesses;
     lossesEl.textContent = totalGuesses - correctGuesses;
     // update the DOM to show the new value of wins, losses and total guesses to the user
-
+    // show how many guesses were recorded of each selection.
+    shedGuess.textContent = totalShed;
+    treeGuess.textContent = totalTree;
+    boulderGuess.textContent = totalBoulder;
+    //show the last guess
+    lastGuess.textContent = `${userGuess}`;
 }
 

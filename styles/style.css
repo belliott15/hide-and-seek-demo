@@ -137,9 +137,3 @@ footer {
     content: '🤭';
     position: absolute;
 }
-
-.guessLog{
-    display: flex;
-    justify-content: left;
-    align-items: flex-start;
-}
