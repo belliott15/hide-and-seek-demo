@@ -93,6 +93,14 @@ function handleGuess(userGuess, correctSpot) {
     if (userGuess === correctSpot) {
         correctGuesses++;
     }
+
+    if (correctSpot === 'tree'){
+        foundTree++;
+    } else if (correctSpot === 'boulder'){
+        foundBoulder++;
+    } else if (correctSpot === 'shed')
+        foundShed++;
+
     winsEl.textContent = correctGuesses;
     totalEl.textContent = totalGuesses;
     lossesEl.textContent = totalGuesses - correctGuesses;
@@ -107,12 +115,5 @@ function handleGuess(userGuess, correctSpot) {
     hideBehindTree.textContent = foundTree;
     hideBehindBoulder.textContent = foundBoulder;
     hideBehindShed.textContent = foundShed;
-
-    if (correctSpot === 'tree'){
-        foundTree++;
-    }else if (correctSpot === 'boulder'){
-        foundBoulder++;
-    }else if (correctSpot === 'shed')
-        foundShed++;
-};
+}
 
