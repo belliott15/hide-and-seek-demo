@@ -66,9 +66,7 @@ function getRandomHidingSpot() {
         'shed',
         'boulder'
     ];
-
     const index = Math.floor(Math.random() * hidingPlaces.length);
-
     // use the random index above and the array of hidingPlaces to get a random hiding place string
     // console.log(hidingPlaces[index]);
     return hidingPlaces[index]; 
@@ -93,18 +91,17 @@ function handleGuess(userGuess, correctSpot) {
     if (userGuess === correctSpot) {
         correctGuesses++;
     }
-
+    // had to put if statement here to make it count correctly
     if (correctSpot === 'tree'){
         foundTree++;
     } else if (correctSpot === 'boulder'){
         foundBoulder++;
     } else if (correctSpot === 'shed')
         foundShed++;
-
+    // update the DOM to show the new value of wins, losses and total guesses to the user
     winsEl.textContent = correctGuesses;
     totalEl.textContent = totalGuesses;
     lossesEl.textContent = totalGuesses - correctGuesses;
-    // update the DOM to show the new value of wins, losses and total guesses to the user
     // show how many guesses were recorded of each selection.
     shedGuess.textContent = totalShed;
     treeGuess.textContent = totalTree;
