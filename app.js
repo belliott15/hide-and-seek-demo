@@ -16,6 +16,10 @@ const treeGuess = document.getElementById('tree-guess');
 const boulderGuess = document.getElementById('boulder-guess');
 const shedGuess = document.getElementById('shed-log');
 
+const hideBehindTree = document.getElementById('hideTree');
+const hideBehindBoulder = document.getElementById('hideBoulder');
+const hideBehindShed = document.getElementById('hideShed');
+
 
 let correctGuesses = 0;
 let totalGuesses = 0;
@@ -23,6 +27,10 @@ let totalGuesses = 0;
 let totalTree = 0;
 let totalBoulder = 0;
 let totalShed = 0;
+
+let foundTree = 0;
+let foundBoulder = 0;
+let foundShed = 0;
 
 
 
@@ -32,7 +40,6 @@ shedButton.addEventListener('click', () => {
     let correctSpot = getRandomHidingSpot();
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess('shed', correctSpot);
-
 });
 
 treeButton.addEventListener('click', () => {
@@ -96,5 +103,16 @@ function handleGuess(userGuess, correctSpot) {
     boulderGuess.textContent = totalBoulder;
     //show the last guess
     lastGuess.textContent = `${userGuess}`;
-}
+    //show where the face was hiding
+    hideBehindTree.textContent = foundTree;
+    hideBehindBoulder.textContent = foundBoulder;
+    hideBehindShed.textContent = foundShed;
+
+    if (correctSpot === 'tree'){
+        foundTree++;
+    }else if (correctSpot === 'boulder'){
+        foundBoulder++;
+    }else if (correctSpot === 'shed')
+        foundShed++;
+};
 
